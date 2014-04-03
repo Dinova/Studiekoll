@@ -1,5 +1,25 @@
-Funktionalitet: 
+ROLL - CHALMERSSTUDENT
+Förväntas använda Studiekoll dagligen för att logga sina studietimmar. Är intresserad av att kunna få en överblick över hur många timmar som läggs på studier och är van vid att använda appar i sin vardag. En person med många bollar i luften som efterfrågar ett enkelt gränssnitt och en snabbhanterlig funktionalitet.
 
+USER STORIES
+- användaren kan mata in antalet timmar som hen spenderat på studier och låta dessa adderas till tidigare inrapporterade timmar
+- användaren kan mata in antalet timmar som hen spenderat på studier kopplat till dagens datum
+- användaren kan mata in antalet timmar som hen spenderat på studier kopplat till valfritt datum
+
+- användaren kan se den totala summan antal timmar rapporterade
+- användaren kan se antal timmar rapporterade distribuerat per dag
+- användaren kan i en graf se antal timmar rapporterade distribuerat per dag
+- användaren kan välja vilken vecka som grafen ska visualisera
+- användaren kan välja vilken läsperiod som grafen ska visualisera
+- användaren kan välja vilken tidsperiod som grafen ska visualisera
+
+- användaren kan sätta ett personligt mål för antal timmar som ska uppnås
+- användaren kan ändra eller ta bort målet
+- användaren kan ändra eller ta bort inrapporterade timmar
+
+
+
+FUNKTIONALITET 
 
 Användare: 
 
