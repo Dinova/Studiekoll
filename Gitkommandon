@@ -1,0 +1,13 @@
+Lite hjälp
+
+cd - change directory, behövs för att hoppa runt i filträdet från editorn
+ls - listar de (synliga) filer och mappar där du står just nu
+
+gitkommandon:
+
+git add - stagear en fil/mapp för nästa commit, lägger den alltså på en lista för saker som ska läggas till vid nästa commit
+git commit -m "message" - lägger till filer/mappar som ska upp till github vid nästa push/publicering, glöm inte -m och meddelande för att det inte ska strula...
+git push - publicerar/laddar upp dina committade filer/mappar upp på github
+git checkout branchname - byter branch som du befinner dig i till branchname
+git merge branchname - har inte testat detta än men den ska merga branchen branchname med master, OBS! du måste stå i master när du mergar!!!
+
