@@ -9,5 +9,5 @@ git add - stagear en fil/mapp för nästa commit, lägger den alltså på en lis
 git commit -m "message" - lägger till filer/mappar som ska upp till github vid nästa push/publicering, glöm inte -m och meddelande för att det inte ska strula...
 git push - publicerar/laddar upp dina committade filer/mappar upp på github
 git checkout branchname - byter branch som du befinner dig i till branchname
-git merge branchname - har inte testat detta än men den ska merga branchen branchname med master, OBS! du måste stå i master när du mergar!!!
+git merge branchname - har inte testat detta än men den ska merga branchen branchname med master, OBS! du måste stå i master om du vill merga en branch med mastern!!!
 
