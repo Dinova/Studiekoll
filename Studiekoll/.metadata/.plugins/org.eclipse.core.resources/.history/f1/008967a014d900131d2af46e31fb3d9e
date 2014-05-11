@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Studiekoll</string>
+    <string name="action_settings">Settings</string>
+    <string name="edit_message">Insert number of hours</string>
+    <string name="button_graphics">Loggningsvy</string>
+    <string name="button_input">Inmatning</string>
+    <string name="button_help">Hjälp</string>
+    <string name="title_activity_input">Inmatning</string>
+    <string name="inputMessage">Här för du in timmar och datum</string>
+	<string name="inputHourHint">Antal timmar...</string>
+	<string name="inputDateHint">Datum...</string>
+</resources>

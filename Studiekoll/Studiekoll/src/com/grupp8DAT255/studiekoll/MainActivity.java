@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.content.Intent;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -46,6 +47,15 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Called when the user clicks on the input_button
+     * @param view
+     */
+    public void createInputActivity(View view){
+    	Intent inputIntent = new Intent(this, InputActivity.class);
+    	startActivity(inputIntent);
+    }
+    
     /**
      * A placeholder fragment containing a simple view.
      */
