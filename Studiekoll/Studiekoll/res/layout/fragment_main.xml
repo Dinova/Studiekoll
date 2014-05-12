@@ -25,7 +25,8 @@
 	    android:id="@+id/help_button"
 	    android:layout_width="280dp"
 	    android:layout_height="wrap_content"
-	    android:text="@string/button_help" />
+	    android:text="@string/button_help"
+	    android:onClick="createHelpActivity" />
 	
 </LinearLayout>
 

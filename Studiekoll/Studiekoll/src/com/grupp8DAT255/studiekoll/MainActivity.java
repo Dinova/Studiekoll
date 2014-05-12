@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.content.Intent;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -46,6 +47,11 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void createHelpActivity(View view){
+    	Intent helpIntent = new Intent(this, HelpActivity.class);
+    	startActivity(helpIntent);
+    }
+    
     /**
      * A placeholder fragment containing a simple view.
      */
