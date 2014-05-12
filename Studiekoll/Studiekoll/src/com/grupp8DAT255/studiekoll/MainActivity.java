@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.content.Intent;
+import android.widget.CalendarView;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -46,6 +48,14 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Is called when graphbutton is clicked
+     */
+    public void createGraphActivity(View view){
+    	Intent graphIntent = new Intent(this, GraphActivity.class);
+    	startActivity(graphIntent);
+    }
+    
     /**
      * A placeholder fragment containing a simple view.
      */
