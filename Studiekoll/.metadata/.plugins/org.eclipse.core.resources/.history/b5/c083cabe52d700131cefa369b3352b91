@@ -15,7 +15,11 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" /> -->
 
-
+	<!-- <EditText android:id="@+id/edit_message"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:hint="@string/edit_message"/>
+ -->
 
 	<Button
 	    android:id="@+id/graphics_button"

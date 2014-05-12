@@ -1,3 +1,4 @@
-INDEX VERSION 1.126+D:\GitRepos\Android\Studiekoll\Studiekoll\.metadata\.plugins\org.eclipse.jdt.core
-3177043033.index
+INDEX VERSION 1.126+C:\Users\andreas\Studiekoll\Studiekoll\.metadata\.plugins\org.eclipse.jdt.core
+3037811789.index
+567277047.index
 1284074322.index
