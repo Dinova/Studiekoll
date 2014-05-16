@@ -242,7 +242,7 @@ int id action_settings 0x7f050043
 int id activity_chooser_view_content 0x7f050025
 int id always 0x7f05000b
 int id beginning 0x7f050011
-int id button1 0x7f05003e
+int id button1 0x7f05003f
 int id checkbox 0x7f05002d
 int id collapseActionView 0x7f05000d
 int id container 0x7f05003c
@@ -256,6 +256,7 @@ int id expand_activities_button 0x7f050026
 int id expanded_menu 0x7f05002c
 int id graphics_button 0x7f050040
 int id help_button 0x7f050042
+int id help_text_view 0x7f05003e
 int id home 0x7f050014
 int id homeAsUp 0x7f050005
 int id icon 0x7f05002a
@@ -289,7 +290,6 @@ int id split_action_bar 0x7f05001e
 int id submit_area 0x7f050039
 int id tabMode 0x7f050002
 int id textView1 0x7f05003d
-int id textView2 0x7f05003f
 int id title 0x7f05002b
 int id top_action_bar 0x7f050020
 int id up 0x7f050021
