@@ -67,7 +67,7 @@ public class GraphActivity extends ActionBarActivity {
 		String toMonth = (String) toMonthSpinner.getSelectedItem();
 		String toDay = (String) toDaySpinner.getSelectedItem();
 		
-		//Formatting the dates for the database (yyyy-mm-dd)
+		//Formatting the dates for the database
 		String fromDate = fromYear + "-" + fromMonth + "-" + fromDay;
 		String toDate = toYear + "-" + toMonth + "-" + toDay;
 		
@@ -78,7 +78,7 @@ public class GraphActivity extends ActionBarActivity {
 		
 		//Showing the hours on the screen
 		TextView hourView = (TextView) findViewById(R.id.invested_hours_text_view);
-		hourView.setText("10h"); //HÄR GÅR TEXTEN IN!
+		hourView.setText("10h");
 	}
 	
 	public static class PlaceholderFragment extends Fragment {
@@ -119,6 +119,12 @@ public class GraphActivity extends ActionBarActivity {
 			toYearSpinner.setAdapter(yearAdapter);
 			toMonthSpinner.setAdapter(monthAdapter);
 			toDaySpinner.setAdapter(dayAdapter);
+			
+			//Set prompts for spinners
+			//fromYearSpinner.setPrompt("År");
+			//fromMonthSpinner.setPrompt("Månad");
+			//fromDaySpinner.setPrompt("Dag");
+			//toYearSpinner.setPrompt("")
 			
 			
 			
