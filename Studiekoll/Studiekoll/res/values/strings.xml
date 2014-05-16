@@ -8,5 +8,11 @@
     <string name="button_help">Hjälp</string>
     <string name="title_activity_graph">Loggade timmar</string>
     <string name="message">Här ser du dina studietimmar för vald period</string>
-
+    <string name="from_prompt">Från</string>
+    <string name="to_prompt">Till</string>
+    <string name="show_button_text">Visa</string>
+    <string name="year_prompt">Välj år</string>
+    <string name="month_prompt">Välj månad</string>
+    <string name="day_prompt">Välj dag</string>
+	
 </resources>
