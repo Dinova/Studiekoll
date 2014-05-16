@@ -9,8 +9,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TimePicker;
 import android.os.Build;
+
 import java.lang.Double;
 
 public class InputActivity extends ActionBarActivity {
@@ -53,20 +57,34 @@ public class InputActivity extends ActionBarActivity {
 	public void storeData(View view){
 		//HÄRIFRÅN, ELLER FRÅN EN EGEN KLASS - VET INTE VILKET SOM ÄR BÄST
 		//SKA DATA LAGRAS
-		
-		//The hours is fetched from the input_hours EditText
-		//BÖR SÄKERSTÄLLA ATT DET ÄR SIFFROR SOM SKICKAS IN!!!
 		//BÖR ÄVEN GENERERA NYCKEL TILL DATABASEN HÄR
-		//TIMMARNA SKA TROLIGTVIS INTE VARA EN STRING
-		EditText hourEditText = (EditText) findViewById(R.id.input_hours);
-	    String hours = hourEditText.getText().toString();
-	    
-	    //The date is fetched from the input_date EditText
-	    //DATUMET SKA TROLIGTVIS INTE VARA EN STRING
-	    EditText dateEditText = (EditText) findViewById(R.id.input_date);
-	    String date = dateEditText.getText().toString();
-	    
-	    //VI BÖR ÄVEN BESTÄMMA OM VI SKA STANNA KVAR I INPUMENYN ELLER OM MAN
+		
+		//Recovering the time picker
+		TimePicker timePicker = (TimePicker) findViewById(R.id.time_picker);
+		
+		//Getting selected values from time picker
+		double logHour = timePicker.getCurrentHour();
+		double logMinute = timePicker.getCurrentMinute();
+		
+		//Formatting the time for the database (hours)
+		double logTime = logHour + logMinute/60;
+		
+		//Recovering the spinners
+		Spinner logYearSpinner = (Spinner) findViewById(R.id.log_year_spinner);
+		Spinner logMonthSpinner = (Spinner) findViewById(R.id.log_month_spinner);
+		Spinner logDaySpinner = (Spinner) findViewById(R.id.log_day_spinner);
+		
+		//Getting selected values from spinners
+		String logYear = (String) logYearSpinner.getSelectedItem();
+		String logMonth = (String) logMonthSpinner.getSelectedItem();
+		String logDay = (String) logDaySpinner.getSelectedItem();
+		
+		//Formatting the date for the database (yyyy-mm-dd)
+		String logDate = logYear + "-" + logMonth + "-" + logDay;
+		System.out.println(logDate);
+		System.out.println(logTime);
+		
+	    //VI BÖR ÄVEN BESTÄMMA OM VI SKA STANNA KVAR I INPUTMENYN ELLER OM MAN
 	    //SKA SKICKAS TILLBAKA TILL STARMENYN EFTER ATT MAN TRYCKT PÅ KNAPPEN
 	    
 	}
@@ -84,6 +102,30 @@ public class InputActivity extends ActionBarActivity {
 				Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.fragment_input,
 					container, false);
+			
+			//Setting the timepicker to be in 24h-mode
+			TimePicker timePicker = (TimePicker) rootView.findViewById(R.id.time_picker);
+			timePicker.setIs24HourView(true);
+			
+			//Initialising the different spinner-objects
+			Spinner logYearSpinner = (Spinner) rootView.findViewById(R.id.log_year_spinner);
+			Spinner logMonthSpinner = (Spinner) rootView.findViewById(R.id.log_month_spinner);
+			Spinner logDaySpinner = (Spinner) rootView.findViewById(R.id.log_day_spinner);
+			
+			// Create the different ArrayAdapters using the string array and a default spinner layout
+			ArrayAdapter<CharSequence> yearAdapter = ArrayAdapter.createFromResource(getActivity(),
+			        R.array.year_array, android.R.layout.simple_spinner_item);
+			ArrayAdapter<CharSequence> monthAdapter = ArrayAdapter.createFromResource(getActivity(),
+			        R.array.month_array, android.R.layout.simple_spinner_item);
+			ArrayAdapter<CharSequence> dayAdapter = ArrayAdapter.createFromResource(getActivity(),
+			        R.array.day_array, android.R.layout.simple_spinner_item);
+
+			// Apply the adapters to the spinners
+			logYearSpinner.setAdapter(yearAdapter);
+			logMonthSpinner.setAdapter(monthAdapter);
+			logDaySpinner.setAdapter(dayAdapter);
+			
+			
 			return rootView;
 		}
 	}

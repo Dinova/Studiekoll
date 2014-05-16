@@ -8,8 +8,7 @@
     <string name="button_input">Inmatning</string>
     <string name="button_help">Hjälp</string>
     <string name="title_activity_input">Inmatning</string>
-    <string name="input_message">Här för du in timmar och datum</string>
-	<string name="input_hour_hint">Antal timmar...</string>
-	<string name="input_date_hint">Datum...</string>
+    <string name="input_message">Här för du in studietid och datum</string>
 	<string name="send_input_button">Lagra inmatad data</string>
+	
 </resources>

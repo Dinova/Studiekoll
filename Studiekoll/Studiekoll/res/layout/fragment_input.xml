@@ -16,23 +16,44 @@
         android:textSize="18sp"
         android:textStyle="bold" />
     
-    <EditText 
-        android:id="@+id/input_hours"
-        android:layout_width="match_parent"
+    <TimePicker
+        android:id="@+id/time_picker"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/input_hour_hint"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp" />
     
-    <EditText 
-        android:id="@+id/input_date"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_height="wrap_content"
-        android:hint="@string/input_date_hint"/>
+        android:layout_width="fill_parent" >
+		    
+       	<Spinner
+        	android:id="@+id/log_year_spinner"
+        	android:layout_height="wrap_content"
+        	android:layout_width="wrap_content" />
+        
+        <Spinner
+        	android:id="@+id/log_month_spinner"
+        	android:layout_height="wrap_content"
+        	android:layout_width="wrap_content" />
+        	
+        <Spinner
+        	android:id="@+id/log_day_spinner"
+        	android:layout_height="wrap_content"
+        	android:layout_width="wrap_content" />
+        
+    </LinearLayout>
+    
     
     <Button 
         android:id="@+id/store_input_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/send_input_button"
-        android:onClick="storeData"/>"
+        android:onClick="storeData"/>
+
+
 
 </LinearLayout>
