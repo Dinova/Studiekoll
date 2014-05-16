@@ -14,22 +14,23 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="Behöver du hjälp?"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:gravity="center_vertical|center_vertical" />"
+        android:text="Behöver du hjälp?" />
 
     <ScrollView 
         android:layout_width="fill_parent"
     	android:layout_height="0dp"
-        android:layout_weight="4" >	
+        android:layout_weight="6" >	
         
     	<TextView
-    	    android:id="@+id/help_text_view"
-    	    android:layout_width="wrap_content"
-    	    android:layout_height="wrap_content"
-    	    android:text="@string/help_text"
-    	    android:textAppearance="?android:attr/textAppearanceMedium" />
-        	    
+        	android:id="@+id/help_text_view"
+        	android:layout_width="wrap_content"
+        	android:layout_height="0dp"
+        	android:layout_weight="6"
+        	android:scrollHorizontally="true"
+        	android:scrollbarAlwaysDrawVerticalTrack="true"
+        	android:text="@string/help_text"
+        	android:textAppearance="?android:attr/textAppearanceMedium" />
+    
     </ScrollView>
     
      <Button
@@ -38,7 +39,6 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="OK" 
-        android:onClick="backToMain"
-        android:layout_gravity="center_vertical|center_horizontal"/>
+        android:onClick="backToMain"/>
 
 </LinearLayout>
