@@ -26,7 +26,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="35dp"
-        android:text="OK" 
+        android:text="OK!" 
         android:onClick="backToMain"/>
 
     <TextView
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/help_text"
+        android:text="Här kommer du snart kunna läsa om hur du ska göra för att använda Studiekoll!"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>
