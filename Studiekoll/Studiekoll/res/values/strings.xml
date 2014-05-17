@@ -34,6 +34,8 @@
     <string name="show_button_text">Visa</string>
     <string name="year_prompt">Välj år</string>
     <string name="month_prompt">Välj månad</string>
-    <string name="day_prompt">Välj dag</string>
-    
+    <string name="day_prompt">Välj dag</string>    
+    <string name="title_activity_input">Inmatning</string>
+    <string name="input_message">Här för du in studietid och datum</string>
+	<string name="send_input_button">Lagra inmatad data</string>
 </resources>

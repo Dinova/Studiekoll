@@ -60,6 +60,15 @@ public class MainActivity extends ActionBarActivity {
     }
     
     /**
+     * Called when the user clicks on the input_button
+     * @param view
+     */
+    public void createInputActivity(View view){
+    	Intent inputIntent = new Intent(this, InputActivity.class);
+    	startActivity(inputIntent);
+    }
+    
+    /**
      * A placeholder fragment containing a simple view.
      */
     public static class PlaceholderFragment extends Fragment {

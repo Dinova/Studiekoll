@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="android.widget.CalendarView"/>
 <fullyQualifiedTypeName name="android.widget.Spinner"/>
 <fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
@@ -13,4 +14,9 @@
 <fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="com.grupp8DAT255.studiekoll.R.id"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
+=======
+<fullyQualifiedTypeName name="com.grupp8DAT255.studiekoll.R.id"/>
+<fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="java.lang.Double"/>
+>>>>>>> Database
 </qualifiedTypeNameHistroy>

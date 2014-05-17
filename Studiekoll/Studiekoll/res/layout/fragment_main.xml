@@ -20,7 +20,8 @@
 	    android:id="@+id/input_button"
 	    android:layout_width="280dp"
 	    android:layout_height="wrap_content"
-	    android:text="@string/button_input" />
+	    android:text="@string/button_input"
+	    android:onClick="createInputActivity" />
 
 	<Button
 	    android:id="@+id/help_button"

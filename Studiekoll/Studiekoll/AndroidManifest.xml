@@ -37,6 +37,14 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.grupp8DAT255.studiekoll" />
+		</activity>
+		<activity
+            android:name="com.grupp8DAT255.studiekoll.InputActivity"
+            android:label="@string/title_activity_input"
+            android:parentActivityName="com.grupp8DAT255.studiekoll" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.grupp8DAT255.studiekoll" />
         </activity>
     </application>
 
