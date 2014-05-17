@@ -26,7 +26,6 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         
@@ -50,6 +49,14 @@ public class MainActivity extends ActionBarActivity {
     public void createHelpActivity(View view){
     	Intent helpIntent = new Intent(this, HelpActivity.class);
     	startActivity(helpIntent);
+    }
+    
+    /**
+     * Is called when graphbutton is clicked
+     */
+    public void createGraphActivity(View view){
+    	Intent graphIntent = new Intent(this, GraphActivity.class);
+    	startActivity(graphIntent);
     }
     
     /**
