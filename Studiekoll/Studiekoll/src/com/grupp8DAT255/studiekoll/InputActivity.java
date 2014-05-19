@@ -3,6 +3,8 @@ package com.grupp8DAT255.studiekoll;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -10,7 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.os.Build;
@@ -18,11 +19,19 @@ import android.os.Build;
 import java.lang.Double;
 
 public class InputActivity extends ActionBarActivity {
-
+	double id, logTime;
+	String category = "Matte"; 
+	String logDate;
+	SQLiteDatabase db;
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_input);
+		
+		db=openOrCreateDatabase("MyDB",MODE_PRIVATE, null); 
+		db.execSQL("CREATE TABLE IF NOT EXISTS Studiekoll(id INTEGER PRIMARY KEY AUTOINCREMENT, logTime DOUBLE, category VARCHAR, logDate VARCHAR);");		
 
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
@@ -54,6 +63,8 @@ public class InputActivity extends ActionBarActivity {
 	 * Called when the user clicks on the store_data button
 	 * @param view
 	 */
+		
+	
 	public void storeData(View view){
 		//HÄRIFRÅN, ELLER FRÅN EN EGEN KLASS - VET INTE VILKET SOM ÄR BÄST
 		//SKA DATA LAGRAS
@@ -67,7 +78,7 @@ public class InputActivity extends ActionBarActivity {
 		double logMinute = timePicker.getCurrentMinute();
 		
 		//Formatting the time for the database (hours)
-		double logTime = logHour + logMinute/60;
+		logTime = logHour + logMinute/60;
 		
 		//Recovering the spinners
 		Spinner logYearSpinner = (Spinner) findViewById(R.id.log_year_spinner);
@@ -80,14 +91,18 @@ public class InputActivity extends ActionBarActivity {
 		String logDay = (String) logDaySpinner.getSelectedItem();
 		
 		//Formatting the date for the database (yyyy-mm-dd)
-		String logDate = logYear + "-" + logMonth + "-" + logDay;
-		System.out.println(logDate);
-		System.out.println(logTime);
+		logDate = logYear + "-" + logMonth + "-" + logDay;
 		
 	    //VI BÖR ÄVEN BESTÄMMA OM VI SKA STANNA KVAR I INPUTMENYN ELLER OM MAN
 	    //SKA SKICKAS TILLBAKA TILL STARMENYN EFTER ATT MAN TRYCKT PÅ KNAPPEN
 	    
+		db.execSQL("INSERT INTO Studiekoll VALUES ("+ null +","+logTime+", '"+category+"','"+logDate+"');");
+		
+		Intent inputIntent = new Intent(this, MainActivity.class);
+		startActivity(inputIntent);
+		
 	}
+	
 	
 	/**
 	 * A placeholder fragment containing a simple view.

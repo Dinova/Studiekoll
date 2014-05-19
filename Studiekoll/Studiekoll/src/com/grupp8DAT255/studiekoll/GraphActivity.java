@@ -3,6 +3,8 @@ package com.grupp8DAT255.studiekoll;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -16,11 +18,18 @@ import android.os.Build;
 
 public class GraphActivity extends ActionBarActivity {
 
+	SQLiteDatabase db;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_graph);
 
+		db=openOrCreateDatabase("MyDB",MODE_PRIVATE, null); 
+		db.execSQL("CREATE TABLE IF NOT EXISTS Studiekoll(id INTEGER PRIMARY KEY AUTOINCREMENT, logTime DOUBLE, category VARCHAR, logDate VARCHAR);");
+		
+		
+		
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
@@ -67,9 +76,12 @@ public class GraphActivity extends ActionBarActivity {
 		String toMonth = (String) toMonthSpinner.getSelectedItem();
 		String toDay = (String) toDaySpinner.getSelectedItem();
 		
-		//Formatting the dates for the database (yyyy-mm-dd)
-		String fromDate = fromYear + "-" + fromMonth + "-" + fromDay;
-		String toDate = toYear + "-" + toMonth + "-" + toDay;
+		//Formatting the dates for the database ("yyyy-mm-dd")
+		String fromDate = '"' + fromYear + "-" + fromMonth + "-" + fromDay + '"';
+		String toDate = '"' + toYear + "-" + toMonth + "-" + toDay + '"';
+		
+		double totalHours = getStudyHours(fromDate,toDate);
+		
 		
 //NU HAR VI DATUMEN SOM SKA VISAS EMELLAN ANDREAS YEEEEEEEEEEEESSSSS!!!!!
 //VI SKA KOPPLA DATABASEN HIT
@@ -78,8 +90,34 @@ public class GraphActivity extends ActionBarActivity {
 		
 		//Showing the hours on the screen
 		TextView hourView = (TextView) findViewById(R.id.invested_hours_text_view);
-		hourView.setText("10h"); //HÄR GÅR TEXTEN IN!
+		hourView.setText(totalHours + "h"); //HÄR GÅR TEXTEN IN!
 	}
+	
+	public double getStudyHours(String fromDate, String toDate) {
+		
+		double totalTime = 0;
+		int i = 0;
+		
+		Cursor cursor = db.rawQuery("SELECT * FROM Studiekoll WHERE "
+				+ "logDate BETWEEN " + fromDate + " AND " + toDate , null);
+		
+		System.out.println("HEJSAN SVEJSAN");
+				
+		
+			while (cursor.moveToNext()) {
+				
+				if (i == 0){
+					cursor.moveToFirst();	//Fult, men för att få med första värdet så krävs detta		
+				}
+				
+				totalTime = totalTime + cursor.getDouble(1);
+				System.out.println(cursor.getDouble(1));
+				i = i +1;  
+			}
+			cursor.close();	
+			return totalTime; 
+			
+		}
 	
 	public static class PlaceholderFragment extends Fragment {
 

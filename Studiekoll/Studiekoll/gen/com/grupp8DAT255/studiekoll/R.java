@@ -1178,23 +1178,22 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000b;
         public static final int action_settings=0x7f0a000e;
         public static final int app_name=0x7f0a000d;
-        public static final int button_graphics=0x7f0a0010;
-        public static final int button_help=0x7f0a0012;
-        public static final int button_input=0x7f0a0011;
-        public static final int day_prompt=0x7f0a001c;
-        public static final int edit_message=0x7f0a000f;
-        public static final int from_prompt=0x7f0a0017;
-        public static final int help_text=0x7f0a0014;
-        public static final int input_message=0x7f0a001e;
-        public static final int message=0x7f0a0016;
-        public static final int month_prompt=0x7f0a001b;
-        public static final int send_input_button=0x7f0a001f;
-        public static final int show_button_text=0x7f0a0019;
-        public static final int title_activity_graph=0x7f0a0015;
-        public static final int title_activity_help=0x7f0a0013;
-        public static final int title_activity_input=0x7f0a001d;
-        public static final int to_prompt=0x7f0a0018;
-        public static final int year_prompt=0x7f0a001a;
+        public static final int button_graphics=0x7f0a000f;
+        public static final int button_help=0x7f0a0011;
+        public static final int button_input=0x7f0a0010;
+        public static final int day_prompt=0x7f0a001b;
+        public static final int from_prompt=0x7f0a0016;
+        public static final int help_text=0x7f0a0013;
+        public static final int input_message=0x7f0a001d;
+        public static final int message=0x7f0a0015;
+        public static final int month_prompt=0x7f0a001a;
+        public static final int send_input_button=0x7f0a001e;
+        public static final int show_button_text=0x7f0a0018;
+        public static final int title_activity_graph=0x7f0a0014;
+        public static final int title_activity_help=0x7f0a0012;
+        public static final int title_activity_input=0x7f0a001c;
+        public static final int to_prompt=0x7f0a0017;
+        public static final int year_prompt=0x7f0a0019;
     }
     public static final class style {
         /** 

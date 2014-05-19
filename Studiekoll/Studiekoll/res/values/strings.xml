@@ -3,7 +3,6 @@
 
     <string name="app_name">Studiekoll</string>
     <string name="action_settings">Settings</string>
-    <string name="edit_message">Insert number of hours</string>
     <string name="button_graphics">Graf</string>
     <string name="button_input">Inmatning</string>
     <string name="button_help">Hjälp</string>    
