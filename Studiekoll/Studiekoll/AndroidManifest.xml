@@ -22,6 +22,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.grupp8DAT255.studiekoll.HelpActivity"
+            android:label="@string/title_activity_help"
+            android:parentActivityName="com.grupp8DAT255.studiekoll.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.grupp8DAT255.studiekoll" />
+        </activity>
+        <activity 
+            android:name="com.grupp8DAT255.studiekoll.GraphActivity"
+            android:label="@string/title_activity_graph"
+            android:parentActivityName="com.grupp8DAT255.studiekoll.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.grupp8DAT255.studiekoll" />
+		</activity>
+		<activity
+            android:name="com.grupp8DAT255.studiekoll.InputActivity"
+            android:label="@string/title_activity_input"
+            android:parentActivityName="com.grupp8DAT255.studiekoll.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"	
+                android:value="com.grupp8DAT255.studiekoll" />
+        </activity>
     </application>
 
 </manifest>

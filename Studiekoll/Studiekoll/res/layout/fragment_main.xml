@@ -9,6 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.grupp8DAT255.studiekoll.MainActivity$PlaceholderFragment" >
 
+<<<<<<< HEAD
     
     <!-- <TextView
         android:layout_width="wrap_content"
@@ -17,23 +18,28 @@
 
 
 
+=======
+>>>>>>> 1f342ef027c67910fc87b7e45869997659044a9d
 	<Button
 	    android:id="@+id/graphics_button"
 	    android:layout_width="280dp"
 	    android:layout_height="wrap_content"
-	    android:text="@string/button_graphics" />
+	    android:text="@string/button_graphics"
+	    android:onClick="createGraphActivity" />
 	
 	<Button
 	    android:id="@+id/input_button"
 	    android:layout_width="280dp"
 	    android:layout_height="wrap_content"
-	    android:text="@string/button_input" />
+	    android:text="@string/button_input"
+	    android:onClick="createInputActivity" />
 
 	<Button
 	    android:id="@+id/help_button"
 	    android:layout_width="280dp"
 	    android:layout_height="wrap_content"
-	    android:text="@string/button_help" />
+	    android:text="@string/button_help"
+	    android:onClick="createHelpActivity" />
 	
 </LinearLayout>
 

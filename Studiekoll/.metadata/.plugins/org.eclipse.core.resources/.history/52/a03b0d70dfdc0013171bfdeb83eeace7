@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Studiekoll</string>
+    <string name="action_settings">Settings</string>
+    <string name="edit_message">Insert number of hours</string>
+    <string name="button_graphics">Graf</string>
+    <string name="button_input">Inmatning</string>
+    <string name="button_help">Hjälp</string>
+    <string name="title_activity_help">Hjälp</string>
+    <string name="help_text"> 
+        "Meny\n"
+        + "Här väljer du mellan tre funktioner enligt nedan\n"
+       
+        Graf
+        I denna vy kan du se dina studietimmar för vald period.
+        Använd dig av drop-down menyerna för att ställa in under
+        vilken period du vill se studietimmarna redovisas.
+        Tryck sedan på "visa"-knappen för att visa antalet studietimmar. 
+        \n
+        Inmatning \n
+        Här matar du in den tid du lagt ned på dina studier. Du väljer 
+        timmar och minuter i snurran och datum med hjälp av drop-down
+        menyerna. Tryck sedan på "lagra"-knappen för att spara inmatningen.
+        Det är möjligt att föra in tid flera gånger för samma datum.
+        \n
+        Hjälp \n
+        Här får du som du ser hjälp att hantera appen."</string>
+
+</resources>

@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.content.Intent;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -24,7 +25,6 @@ public class MainActivity extends ActionBarActivity {
                     .commit();
         }
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -46,6 +46,28 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void createHelpActivity(View view){
+    	Intent helpIntent = new Intent(this, HelpActivity.class);
+    	startActivity(helpIntent);
+    }
+    
+    /**
+     * Is called when graphbutton is clicked
+     */
+    public void createGraphActivity(View view){
+    	Intent graphIntent = new Intent(this, GraphActivity.class);
+    	startActivity(graphIntent);
+    }
+    
+    /**
+     * Called when the user clicks on the input_button
+     * @param view
+     */
+    public void createInputActivity(View view){
+    	Intent inputIntent = new Intent(this, InputActivity.class);
+    	startActivity(inputIntent);
+    }
+    
     /**
      * A placeholder fragment containing a simple view.
      */
