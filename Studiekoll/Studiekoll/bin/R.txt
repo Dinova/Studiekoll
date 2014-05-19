@@ -368,10 +368,12 @@ int string button_input 0x7f0a0011
 int string day_prompt 0x7f0a001c
 int string edit_message 0x7f0a000f
 int string from_prompt 0x7f0a0017
+int string help_prompt 0x7f0a0020
 int string help_text 0x7f0a0014
 int string input_message 0x7f0a001e
 int string message 0x7f0a0016
 int string month_prompt 0x7f0a001b
+int string ok_button_text 0x7f0a0021
 int string send_input_button 0x7f0a001f
 int string show_button_text 0x7f0a0019
 int string title_activity_graph 0x7f0a0015

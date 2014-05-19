@@ -27,22 +27,30 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_height="wrap_content"
-        android:layout_width="fill_parent" >
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="10dp" >
 		    
        	<Spinner
         	android:id="@+id/log_year_spinner"
         	android:layout_height="wrap_content"
-        	android:layout_width="wrap_content" />
+        	android:layout_width="wrap_content"
+        	android:spinnerMode="dialog"
+        	android:prompt="@string/year_prompt" />
         
         <Spinner
         	android:id="@+id/log_month_spinner"
         	android:layout_height="wrap_content"
-        	android:layout_width="wrap_content" />
-        	
+        	android:layout_width="wrap_content"
+        	android:spinnerMode="dialog" 
+        	android:prompt="@string/month_prompt"/>
+        		
         <Spinner
         	android:id="@+id/log_day_spinner"
         	android:layout_height="wrap_content"
-        	android:layout_width="wrap_content" />
+        	android:layout_width="wrap_content"
+        	android:spinnerMode="dialog"
+        	android:prompt="@string/day_prompt" />
         
     </LinearLayout>
     

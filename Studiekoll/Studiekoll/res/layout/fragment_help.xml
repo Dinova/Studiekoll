@@ -14,9 +14,10 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="Behöver du hjälp?"
+        android:text="@string/help_prompt"
+        android:textStyle="bold"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:gravity="center_vertical|center_vertical" />"
+        android:gravity="center_vertical|center_vertical" />
 
     <ScrollView 
         android:layout_width="fill_parent"
@@ -37,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="OK" 
+        android:text="@string/ok_button_text" 
         android:onClick="backToMain"
         android:layout_gravity="center_vertical|center_horizontal"/>
 

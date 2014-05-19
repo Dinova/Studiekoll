@@ -38,4 +38,6 @@
     <string name="title_activity_input">Inmatning</string>
     <string name="input_message">Här för du in studietid och datum</string>
 	<string name="send_input_button">Lagra inmatad data</string>
+	<string name="help_prompt">Behöver du hjälp?</string>
+	<string name="ok_button_text">OK!</string>
 </resources>

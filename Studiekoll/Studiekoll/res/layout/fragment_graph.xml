@@ -14,7 +14,8 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center_horizontal|center_vertical"
-        android:text="@string/message" />
+        android:text="@string/message"
+        android:textStyle="bold" />
 
     <!-- HÄR SKA TIMMAR FRÅN DATABAS LÄGGAS IN SOM VISAD TEXT -->
 

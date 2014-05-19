@@ -25,6 +25,8 @@ public class GraphActivity extends ActionBarActivity {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
+		//Enables the up (back) button in the actionbar
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 
 	@Override

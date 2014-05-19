@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.os.Build;
@@ -24,6 +23,9 @@ public class InputActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_input);
 
+		//Enables the up (back) button in the actionbar
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
@@ -124,7 +126,6 @@ public class InputActivity extends ActionBarActivity {
 			logYearSpinner.setAdapter(yearAdapter);
 			logMonthSpinner.setAdapter(monthAdapter);
 			logDaySpinner.setAdapter(dayAdapter);
-			
 			
 			return rootView;
 		}
