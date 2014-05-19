@@ -15,6 +15,7 @@ import android.widget.TimePicker;
 import android.os.Build;
 
 import java.lang.Double;
+import java.util.ArrayList;
 
 public class InputActivity extends ActionBarActivity {
 
@@ -83,12 +84,20 @@ public class InputActivity extends ActionBarActivity {
 		
 		//Formatting the date for the database (yyyy-mm-dd)
 		String logDate = logYear + "-" + logMonth + "-" + logDay;
-		System.out.println(logDate);
-		System.out.println(logTime);
 		
 	    //VI BÖR ÄVEN BESTÄMMA OM VI SKA STANNA KVAR I INPUTMENYN ELLER OM MAN
 	    //SKA SKICKAS TILLBAKA TILL STARMENYN EFTER ATT MAN TRYCKT PÅ KNAPPEN
-	    
+		
+		//Recovering the category spinner
+		Spinner categorySpinner = (Spinner) findViewById(R.id.category_spinner);
+		
+		//Creating an array from category database table
+		ArrayList<String> categoryNames = new ArrayList<String>(0);
+		//SKA HÄMTA KATEGORIER FRÅN DATABASTABELLEN FÖR KATEGORIER OCH LÄGGA IN I ARRAYLISTEN
+		//category.add(KATEGORINAMN) - lägger till i arrayen
+		//Creating the adapter to populate the category spinner
+		ArrayAdapter<String> categoryAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categoryNames);
+		categorySpinner.setAdapter(categoryAdapter);
 	}
 	
 	/**

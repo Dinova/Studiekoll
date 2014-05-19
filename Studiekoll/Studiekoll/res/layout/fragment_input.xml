@@ -11,7 +11,8 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:text="@string/input_message"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -19,14 +20,16 @@
     <TimePicker
         android:id="@+id/time_picker"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="5"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="20dp" />
     
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_width="fill_parent"
         android:gravity="center_horizontal"
         android:layout_marginBottom="10dp" >
@@ -54,13 +57,21 @@
         
     </LinearLayout>
     
+    <Spinner 
+        android:id="@+id/category_spinner"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:spinnerMode="dialog"
+        android:prompt="@string/category_prompt"/>
     
     <Button 
         android:id="@+id/store_input_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:text="@string/send_input_button"
-        android:onClick="storeData"/>
+        android:onClick="storeData" />
 
 
 

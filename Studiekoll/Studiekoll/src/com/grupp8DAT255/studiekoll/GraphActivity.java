@@ -78,6 +78,9 @@ public class GraphActivity extends ActionBarActivity {
 //VI SKA GÖRA EN QUERY FÖR ALLA TUPLES MELLEN GIVNA DATUM
 //VI SKA LÄGGA IHOP RESULTATEN
 		
+		//Formatting the text to show
+		//VI BEHÖVER FORMATTERA TEXTEN SOM SKA VISAS I TEXTVIEWN!!!
+		
 		//Showing the hours on the screen
 		TextView hourView = (TextView) findViewById(R.id.invested_hours_text_view);
 		hourView.setText("10h"); //HÄR GÅR TEXTEN IN!
