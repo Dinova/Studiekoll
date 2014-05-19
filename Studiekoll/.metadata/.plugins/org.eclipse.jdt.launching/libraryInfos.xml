@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <libraryInfos>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <libraryInfo home="C:\Program Files\Java\jre8" version="1.8.0_05">
 =======
 <libraryInfo home="C:\Program Files\Java\jre8" version="1.8.0">
 >>>>>>> 1f342ef027c67910fc87b7e45869997659044a9d
+=======
+<libraryInfo home="C:\Program Files\Java\jre8" version="1.8.0_05">
+>>>>>>> DatabaseFunctionality
 <bootpath>
 <entry path="C:\Program Files\Java\jre8\lib\resources.jar"/>
 <entry path="C:\Program Files\Java\jre8\lib\rt.jar"/>
@@ -18,10 +22,14 @@
 <extensionDirs>
 <entry path="C:\Program Files\Java\jre8\lib\ext"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <entry path="C:\Windows\Sun\Java\lib\ext"/>
 =======
 <entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
 >>>>>>> 1f342ef027c67910fc87b7e45869997659044a9d
+=======
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+>>>>>>> DatabaseFunctionality
 </extensionDirs>
 <endorsedDirs>
 <entry path="C:\Program Files\Java\jre8\lib\endorsed"/>

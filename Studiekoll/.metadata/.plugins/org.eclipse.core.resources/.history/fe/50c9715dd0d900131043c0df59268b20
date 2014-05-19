@@ -1,0 +1,103 @@
+package com.grupp8DAT255.studiekoll;
+
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBar;
+import android.support.v4.app.Fragment;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
+import android.os.Build;
+
+import java.lang.Double;
+
+public class InputActivity extends ActionBarActivity {
+	
+	String date; 
+	int hour, minute, id; 
+	SQLiteDatabase db; 
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_input);
+		db = openOrCreateDatabase("MyDB", MODE_PRIVATE, null);
+		db.execSQL("CREATE TABLE IF NOT EXIST Tracker(id INT, date VARCHAR, hour INT, minute INT);" );
+
+		if (savedInstanceState == null) {
+			getSupportFragmentManager().beginTransaction()
+					.add(R.id.container, new PlaceholderFragment()).commit();
+		}
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.input, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
+	/**
+	 * Called when the user clicks on the store_data button
+	 * @param view
+	 */
+	public void storeData(View view){
+		
+		EditText edittext1=(EditText)findViewById(R.id.input_hours);
+		EditText edittext1=(EditText)findViewById(R.id.input_minutes);
+		EditText edittext1=(EditText)findViewById(R.id.input_date);
+		//HÄRIFRÅN, ELLER FRÅN EN EGEN KLASS - VET INTE VILKET SOM ÄR BÄST
+		//SKA DATA LAGRAS
+		
+		//The hours is fetched from the input_hours EditText
+		//BÖR SÄKERSTÄLLA ATT DET ÄR SIFFROR SOM SKICKAS IN!!!
+		//BÖR ÄVEN GENERERA NYCKEL TILL DATABASEN HÄR
+		//TIMMARNA SKA TROLIGTVIS INTE VARA EN STRING
+		EditText hourEditText = (EditText) findViewById(R.id.input_hours);
+	    String hours = hourEditText.getText().toString();
+	    
+	    //The date is fetched from the input_date EditText
+	    //DATUMET SKA TROLIGTVIS INTE VARA EN STRING
+	    EditText dateEditText = (EditText) findViewById(R.id.input_date);
+	    String date = dateEditText.getText().toString();
+	    
+	    //VI BÖR ÄVEN BESTÄMMA OM VI SKA STANNA KVAR I INPUMENYN ELLER OM MAN
+	    //SKA SKICKAS TILLBAKA TILL STARMENYN EFTER ATT MAN TRYCKT PÅ KNAPPEN
+	    
+	}
+	
+	/**
+	 * A placeholder fragment containing a simple view.
+	 */
+	public static class PlaceholderFragment extends Fragment {
+
+		public PlaceholderFragment() {
+		}
+
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.fragment_input,
+					container, false);
+			return rootView;
+		}
+	}
+
+}
