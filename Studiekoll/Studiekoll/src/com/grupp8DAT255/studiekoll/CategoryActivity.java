@@ -3,6 +3,9 @@ package com.grupp8DAT255.studiekoll;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -14,11 +17,19 @@ import android.os.Build;
 
 public class CategoryActivity extends ActionBarActivity {
 
+	SQLiteDatabase db;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_category);
 
+		db = openOrCreateDatabase("MyDB", MODE_PRIVATE, null);
+		db.execSQL("CREATE TABLE IF NOT EXISTS Categories(category VARCHAR PRIMARY KEY)");
+		
+		//To be used in future development concerning removing and updating categories
+		//db.execSQL("CREATE TABLE IF NOT EXISTS Studiekoll(id INTEGER PRIMARY KEY AUTOINCREMENT, logTime DOUBLE, category VARCHAR, logDate VARCHAR);");
+		
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
@@ -50,11 +61,18 @@ public class CategoryActivity extends ActionBarActivity {
 	 * @param view
 	 */
 	public void saveCategory(View view){
+		
+		//Recovering the category name given by the user 
+		//(and makes it to be lower case to assert uniqueness)
 		EditText categoryEditText = (EditText) findViewById(R.id.category_edit_text);
-		String categoryName = categoryEditText.getText().toString();
+		String newCategoryName = categoryEditText.getText().toString().toLowerCase();
 		
-		//NAMNET SKA SPARAS I EN NY DATABASTABELL SÅ ATT DE ÖVERLEVER NÄR MAN STÄNGER APPEN
+		//Stores the category name in the category table if it doesn't exist already
+		db.execSQL("INSERT OR IGNORE INTO Categories (category) VALUES('" + newCategoryName + "')");
 		
+		//When the category is saved, the user gets back to main menu
+		Intent backToMainIntent = new Intent(this, MainActivity.class);
+		startActivity(backToMainIntent);
 	}
 	
 	/**

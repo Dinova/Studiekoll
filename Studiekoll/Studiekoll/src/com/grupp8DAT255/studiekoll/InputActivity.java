@@ -3,6 +3,9 @@ package com.grupp8DAT255.studiekoll;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -19,6 +22,11 @@ import java.util.ArrayList;
 
 public class InputActivity extends ActionBarActivity {
 
+	double id, logTime;
+	String logDate;
+	String category = ""; //An empty default category
+	static SQLiteDatabase db; //Don't know why static though....
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -26,6 +34,14 @@ public class InputActivity extends ActionBarActivity {
 
 		//Enables the up (back) button in the actionbar
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		//Controls that the database exists, creates it otherwise
+		//as well with the main and category tables
+		db=openOrCreateDatabase("MyDB",MODE_PRIVATE, null); 
+		db.execSQL("CREATE TABLE IF NOT EXISTS Studiekoll(id INTEGER PRIMARY KEY "
+				+ "AUTOINCREMENT, logTime DOUBLE, category VARCHAR, logDate VARCHAR);");
+		db.execSQL("CREATE TABLE IF NOT EXISTS Categories(category VARCHAR PRIMARY KEY)");
+		
 		
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
@@ -58,10 +74,7 @@ public class InputActivity extends ActionBarActivity {
 	 * @param view
 	 */
 	public void storeData(View view){
-		//HÄRIFRÅN, ELLER FRÅN EN EGEN KLASS - VET INTE VILKET SOM ÄR BÄST
-		//SKA DATA LAGRAS
-		//BÖR ÄVEN GENERERA NYCKEL TILL DATABASEN HÄR
-		
+
 		//Recovering the time picker
 		TimePicker timePicker = (TimePicker) findViewById(R.id.time_picker);
 		
@@ -85,19 +98,21 @@ public class InputActivity extends ActionBarActivity {
 		//Formatting the date for the database (yyyy-mm-dd)
 		String logDate = logYear + "-" + logMonth + "-" + logDay;
 		
-	    //VI BÖR ÄVEN BESTÄMMA OM VI SKA STANNA KVAR I INPUTMENYN ELLER OM MAN
-	    //SKA SKICKAS TILLBAKA TILL STARMENYN EFTER ATT MAN TRYCKT PÅ KNAPPEN
+		//TAGIT
 		
 		//Recovering the category spinner
 		Spinner categorySpinner = (Spinner) findViewById(R.id.category_spinner);
+
+		//TAGIT
 		
-		//Creating an array from category database table
-		ArrayList<String> categoryNames = new ArrayList<String>(0);
-		//SKA HÄMTA KATEGORIER FRÅN DATABASTABELLEN FÖR KATEGORIER OCH LÄGGA IN I ARRAYLISTEN
-		//category.add(KATEGORINAMN) - lägger till i arrayen
-		//Creating the adapter to populate the category spinner
-		ArrayAdapter<String> categoryAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categoryNames);
-		categorySpinner.setAdapter(categoryAdapter);
+		if(categorySpinner.getSelectedItem() != null) {
+			category = categorySpinner.getSelectedItem().toString();
+		}
+		
+		db.execSQL("INSERT INTO Studiekoll VALUES ("+ null +","+logTime+", '"+category+"','"+logDate+"');");
+		
+		Intent inputIntent = new Intent(this, MainActivity.class);
+		startActivity(inputIntent);
 	}
 	
 	/**
@@ -135,6 +150,25 @@ public class InputActivity extends ActionBarActivity {
 			logYearSpinner.setAdapter(yearAdapter);
 			logMonthSpinner.setAdapter(monthAdapter);
 			logDaySpinner.setAdapter(dayAdapter);
+		
+			//Creating an array from category database table
+			ArrayList<String> categoryNames = new ArrayList<String>(0);
+			Cursor categoryCursor = db.rawQuery("SELECT * FROM Categories", null);
+				
+			if (categoryCursor.moveToFirst()){
+				do{
+					categoryNames.add(categoryCursor.getString(0));
+				}
+				while(categoryCursor.moveToNext());
+			}
+			categoryCursor.close(); //Closes the cursor to save space
+			
+			//Recovering the category spinner
+			Spinner categorySpinner = (Spinner) rootView.findViewById(R.id.category_spinner);
+			
+			//Creating the adapter to populate the category spinner
+			ArrayAdapter<String> categoryAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, categoryNames);
+			categorySpinner.setAdapter(categoryAdapter);
 			
 			return rootView;
 		}

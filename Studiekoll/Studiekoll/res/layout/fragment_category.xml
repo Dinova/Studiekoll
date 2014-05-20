@@ -20,7 +20,8 @@
         android:id="@+id/category_edit_text"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/category_hint" />
+        android:hint="@string/category_hint"
+        android:maxLines="1"/>
     
     <Button
         android:layout_width="wrap_content"

@@ -63,7 +63,7 @@
         android:layout_weight="1"
         android:layout_width="fill_parent"
         android:spinnerMode="dialog"
-        android:prompt="@string/category_prompt"/>
+        android:prompt="@string/category_spinner_prompt"/>
     
     <Button 
         android:id="@+id/store_input_button"

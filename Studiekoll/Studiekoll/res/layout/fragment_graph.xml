@@ -26,17 +26,17 @@
         android:layout_weight="6"
         android:gravity="center_horizontal|center_vertical"
         android:lines="1"
-        android:text="125h"
+        android:text=""
         android:textSize="100sp" />
 
     <!-- Bottom control layout -->
     <LinearLayout 
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="3"
         android:orientation="horizontal" >
     
-        <!-- Date control layout -->
+        <!-- Date/category control layout -->
         <LinearLayout 
             android:layout_width="wrap_content"
         	android:layout_height="wrap_content"
@@ -110,16 +110,54 @@
     			    android:spinnerMode="dialog" />
 		
 			</LinearLayout> <!-- To date control layout end -->
-	
-		</LinearLayout> <!-- Date control layout end-->
 			
-			<Button 
-	        	android:layout_width="wrap_content"
-	        	android:layout_height="wrap_content"
+			<!-- Category control -->
+			<LinearLayout 
+			    android:layout_width="fill_parent"
+       			android:layout_height="fill_parent"
+       			android:orientation="horizontal" >
+		
+			    <TextView
+	   			    android:layout_width="0dp"
+	   			    android:layout_weight="1"
+	   			    android:layout_height="wrap_content"
+	   			    android:text="@string/category_prompt" />
+			
+				<Spinner 
+			    	android:id="@+id/show_category_spinner"
+			    	android:layout_width="0dp"
+			    	android:layout_weight="2"
+			    	android:layout_height="wrap_content"
+			    	android:spinnerMode="dialog"
+			    	android:prompt="@string/category_spinner_prompt" />	    
+			    
+			</LinearLayout> <!-- Category control ends -->
+			
+		</LinearLayout> <!-- Date/category control layout end-->
+			
+		<!-- Button layout -->	
+		<LinearLayout 
+		    android:layout_width="wrap_content"
+       		android:layout_height="wrap_content"
+       		android:orientation="vertical"
+       		android:gravity="center_horizontal|center_vertical">
+		    
+		    <Button 
+	        	android:layout_width="fill_parent"
+	        	android:layout_height="fill_parent"
 	        	android:text="@string/show_button_text"
-	        	android:layout_gravity="center_vertical|center_horizontal"
+	        	android:gravity="center_horizontal|center_vertical"
 	        	android:onClick="showGraph" />
-	
+		    
+		    <Button 
+	        	android:layout_width="fill_parent"
+	        	android:layout_height="fill_parent"
+	        	android:text="@string/show_details_button_text"
+	        	android:gravity="center_horizontal|center_vertical"
+	        	android:onClick="showDetails" />
+		    
+		</LinearLayout> <!-- Button layout ends -->
+			
     </LinearLayout> <!-- Bottom control layout end --> 
     
 </LinearLayout>

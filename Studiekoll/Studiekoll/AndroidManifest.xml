@@ -50,6 +50,10 @@
             android:name="com.grupp8DAT255.studiekoll.CategoryActivity"
             android:label="@string/title_activity_category" >
         </activity>
+        <activity
+            android:name="com.grupp8DAT255.studiekoll.DetailsActivity"
+            android:label="@string/title_activity_details" >
+        </activity>
     </application>
 
 </manifest>
